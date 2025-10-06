@@ -37,29 +37,70 @@ public:
         }
     }
 
-    // 
-
-    // setters and getters
-    void setLegs(int l)      { legs = l; }
-    int getLegs()            { return legs; }
-
-    void setPrices(double p1, double p2, double p3) { 
-        prices[0] = p1; prices[1] = p2; prices[2] = p3; 
+    // Accessors / Getters
+    int getLegs()
+    {
+        return legs;
     }
 
-    double getAveragePrices() {
+    // Mutators / Setters
+    void setLegs(int l)
+    {
+        legs = l;
+    }
+
+    void setPrices(double p1, double p2, double p3)
+    { 
+        prices[0] = p1;
+        prices[1] = p2;
+        prices[2] = p3;
+    }
+
+    // Member functions
+    /*
+        getAveragePrices()
+        Returns the average price of the Chair object
+        Arguments: none
+        Return:
+            - A double value representing the average price of the Chair object
+    */
+    double getAveragePrices()
+    {
+        // Declare a variable to hold the sum
         double sum = 0;
+
+        // Add the prices to the sum
         for (int i = 0; i < SIZE; i++)
+        {
             sum += prices[i];
+        }
+
+        // Return the average price
         return sum / SIZE;
     }
 
-    void print() {
+    /*
+        print()
+        Outputs the data of the Chair object to the console
+        Arguments: none
+        Return: none
+    */
+    void print()
+    {
+        // The Chair object's number of legs
         cout << "CHAIR DATA - legs: " << legs << endl;
+
+        // The 3 most recent sale prices
         cout << "Price history: " ;
         for (int i = 0; i < SIZE; i++)
+        {
             cout << prices[i] << " ";
+        }
+
+        // The average price
         cout << endl << "Historical avg price: " << getAveragePrices();
+
+        // Enter 2 new lines
         cout << endl << endl;
     }
 };
