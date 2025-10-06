@@ -46,6 +46,17 @@ public:
         }
     }
 
+    Chair(int l)                          // Partial constructor
+    {
+        legs = l;                         // Assign the number of legs to l
+        prices = new double[SIZE];        // Declare an array with the size of 3
+
+        for (int i = 0; i < SIZE; i++)    // Generate random prices
+        {
+            prices[i] = generateRandomPrice();
+        }
+    }
+
     Chair(int l, double p[SIZE])          // Parameter constructor
     {
         legs = l;                         // Assign the number of legs to l
