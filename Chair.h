@@ -35,25 +35,25 @@ private:
 
 public:
     // constructors
-    Chair()             // Default constructor
+    Chair()                               // Default constructor
     {
-        legs = 0;                         // Assign the number of legs to 0
-        prices = new double[SIZE];        // Declare an array with the size of 3
+        legs = generateRandomLegs();      // Generate a random number of legs
+        prices = new double[SIZE];        // Declare a double array with the size of 3
 
-        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
+        for (int i = 0; i < SIZE; i++)    // Generate random prices
         {
-            prices[i] = 0;
+            prices[i] = generateRandomPrice();
         }
     }
 
-    Chair(int l)        // Partial constructor
+    Chair(int l, double p[SIZE])          // Parameter constructor
     {
         legs = l;                         // Assign the number of legs to l
         prices = new double[SIZE];        // Declare an array with the size of 3
 
-        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
+        for (int i = 0; i < SIZE; i++)    // Copy the 3 prices
         {
-            prices[i] = 0;
+            prices[i] = p[i];
         }
     }
 
