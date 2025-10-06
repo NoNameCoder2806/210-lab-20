@@ -7,6 +7,7 @@ using namespace std;
 const int SIZE = 3;
 const int MIN_PRICE = 10000;
 const int MAX_PRICE = 99999;
+const int MIN_LEGS = 3;
 
 // Chair class
 class Chair
@@ -112,6 +113,8 @@ public:
 // Function prototypes
 double generateRandomPrice();
 
+int generateRandomLegs();
+
 // Main function
 int main()
 {
@@ -148,4 +151,9 @@ int main()
 double generateRandomPrice()
 {
     return (rand() % (MAX_PRICE - MIN_PRICE + 1) + MIN_PRICE) / (double) 100;
+}
+
+int generateRandomLegs()
+{
+    return (rand() % 2 + MIN_LEGS);
 }
