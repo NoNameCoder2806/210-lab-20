@@ -1,27 +1,43 @@
+// Libraries
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
+
+// Constants
 const int SIZE = 3;
 
-class Chair {
+// Chair class
+class Chair
+{
 private:
-    int legs;
-    double * prices;
+    int legs;              // The number of legs of the Chair object
+    double* prices;        // The 3 most recent sale prices
+
 public:
     // constructors
-    Chair() {
-        prices = new double[SIZE];
-        legs = 0;
-        for (int i = 0; i < SIZE; i++)
+    Chair()             // Default constructor
+    {
+        legs = 0;                         // Assign the number of legs to 0
+        prices = new double[SIZE];        // Declare an array with the size of 3
+
+        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
+        {
             prices[i] = 0;
+        }
     }
-    Chair(int l) {
-        prices = new double[SIZE];
-        legs = l;
-        for (int i = 0; i < SIZE; i++)
+
+    Chair(int l)        // Partial constructor
+    {
+        legs = l;                         // Assign the number of legs to l
+        prices = new double[SIZE];        // Declare an array with the size of 3
+
+        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
+        {
             prices[i] = 0;
+        }
     }
+
+    // 
 
     // setters and getters
     void setLegs(int l)      { legs = l; }
