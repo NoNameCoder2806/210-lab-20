@@ -34,15 +34,17 @@ int main()
     delete livingChair;
     livingChair = nullptr;
 
-    // Creating dynamic array of chair objects
-    Chair *collection = new Chair[SIZE];
-    collection[0] = new Chair(4, {441.41, 552.52, 663.63});
-    // collection[0].setLegs(4);
-    // collection[0].setPrices(441.41, 552.52, 663.63);
-    // collection[1].setLegs(4);
-    // collection[1].setPrices(484.84, 959.59, 868.68);
-    // collection[2].setLegs(4);
-    // collection[2].setPrices(626.26, 515.15, 757.57);
+    // Creating 3 double arrays to store the prices
+    double price1[SIZE] = {441.41, 552.52, 663.63};
+    double price2[SIZE] = {484.84, 959.59, 868.68};
+    double price3[SIZE] = {626.26, 515.15, 757.57};
+
+    // Creating an array of Chair objects
+    Chair collection[3] = {
+        Chair chair1(4, price1),
+        Chair chair2(4, price2),
+        Chair chair3(4, price3)
+    };
 
     // Display the data of all the Chair objects
     for (int i = 0; i < SIZE; i++)
