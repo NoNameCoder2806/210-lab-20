@@ -1,119 +1,14 @@
+// COMSC-210 | Lab 20 | Dat Hoang Vien
+// IDE used: Visual Studio Code
+
 // Libraries
 #include <iostream>
 #include <iomanip>
+#include "Chair.h"
 using namespace std;
 
 // Constants
 const int SIZE = 3;
-const int MIN_PRICE = 10000;
-const int MAX_PRICE = 99999;
-const int MIN_LEGS = 3;
-
-// Chair class
-class Chair
-{
-private:
-    int legs;              // The number of legs of the Chair object
-    double* prices;        // The 3 most recent sale prices
-
-    static const int SIZE = 3;      // Size of the prices array
-
-public:
-    // constructors
-    Chair()             // Default constructor
-    {
-        legs = 0;                         // Assign the number of legs to 0
-        prices = new double[SIZE];        // Declare an array with the size of 3
-
-        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
-        {
-            prices[i] = 0;
-        }
-    }
-
-    Chair(int l)        // Partial constructor
-    {
-        legs = l;                         // Assign the number of legs to l
-        prices = new double[SIZE];        // Declare an array with the size of 3
-
-        for (int i = 0; i < SIZE; i++)    // Set all the 3 prices to 0
-        {
-            prices[i] = 0;
-        }
-    }
-
-    // Accessors / Getters
-    int getLegs()
-    {
-        return legs;
-    }
-
-    // Mutators / Setters
-    void setLegs(int l)
-    {
-        legs = l;
-    }
-
-    void setPrices(double p1, double p2, double p3)
-    { 
-        prices[0] = p1;
-        prices[1] = p2;
-        prices[2] = p3;
-    }
-
-    // Member functions
-    /*
-        getAveragePrices()
-        Returns the average price of the Chair object
-        Arguments: none
-        Return:
-            - A double value representing the average price of the Chair object
-    */
-    double getAveragePrices()
-    {
-        // Declare a variable to hold the sum
-        double sum = 0;
-
-        // Add the prices to the sum
-        for (int i = 0; i < SIZE; i++)
-        {
-            sum += prices[i];
-        }
-
-        // Return the average price
-        return sum / SIZE;
-    }
-
-    /*
-        print()
-        Outputs the data of the Chair object to the console
-        Arguments: none
-        Return: none
-    */
-    void print()
-    {
-        // The Chair object's number of legs
-        cout << "CHAIR DATA - legs: " << legs << endl;
-
-        // The 3 most recent sale prices
-        cout << "Price history: " ;
-        for (int i = 0; i < SIZE; i++)
-        {
-            cout << prices[i] << " ";
-        }
-
-        // The average price
-        cout << endl << "Historical avg price: " << getAveragePrices();
-
-        // Enter 2 new lines
-        cout << endl << endl;
-    }
-};
-
-// Function prototypes
-double generateRandomPrice();
-
-int generateRandomLegs();
 
 // Main function
 int main()
@@ -145,15 +40,4 @@ int main()
         collection[i].print();
     
     return 0;
-}
-
-// Function implementations
-double generateRandomPrice()
-{
-    return (rand() % (MAX_PRICE - MIN_PRICE + 1) + MIN_PRICE) / (double) 100;
-}
-
-int generateRandomLegs()
-{
-    return (rand() % 2 + MIN_LEGS);
 }
