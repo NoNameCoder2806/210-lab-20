@@ -39,12 +39,8 @@ int main()
     double price2[SIZE] = {484.84, 959.59, 868.68};
     double price3[SIZE] = {626.26, 515.15, 757.57};
 
-    // Creating an array of Chair objects
-    Chair collection[3] = {
-        Chair chair1(4, price1),
-        Chair chair2(4, price2),
-        Chair chair3(4, price3)
-    };
+    // Creating an array of 3 Chair objects
+    Chair collection[SIZE] = { Chair(4, price1), Chair(4, price2), Chair(4, price3) };
 
     // Display the data of all the Chair objects
     for (int i = 0; i < SIZE; i++)
