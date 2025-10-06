@@ -5,6 +5,8 @@ using namespace std;
 
 // Constants
 const int SIZE = 3;
+const int MIN_PRICE = 10000;
+const int MAX_PRICE = 99999;
 
 // Chair class
 class Chair
@@ -12,6 +14,8 @@ class Chair
 private:
     int legs;              // The number of legs of the Chair object
     double* prices;        // The 3 most recent sale prices
+
+    static const int SIZE = 3;      // Size of the prices array
 
 public:
     // constructors
@@ -105,7 +109,12 @@ public:
     }
 };
 
-int main() {
+// Function prototypes
+double generateRandomPrice();
+
+// Main function
+int main()
+{
     cout << fixed << setprecision(2);
 
     //creating pointer to first chair object
@@ -133,4 +142,10 @@ int main() {
         collection[i].print();
     
     return 0;
+}
+
+// Function implementations
+double generateRandomPrice()
+{
+    return (rand() % (MAX_PRICE - MIN_PRICE + 1) + MIN_PRICE) / (double) 100;
 }
